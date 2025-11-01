@@ -86,6 +86,15 @@ subscribe_pins:
   control_mode:
     hal_type: S32
     initial_value: 8   # CSP
+  # Safety stop interface (bridge from ROS topics to HAL pins)
+  max_vel_safety_scale:
+    hal_type: FLOAT
+  quick_stop:
+    hal_type: BIT
+  quick_stop_ext:
+    hal_type: BIT
+  state_cmd:
+    hal_type: U32
 
 service_pins: {}
   # service_pins values from ROS service copied to HAL output pin

@@ -32,8 +32,6 @@
 import rclpy
 import os
 from hal_plumber import HALPlumberSim, HALPlumberEC
-
-# from hal_plumber.robot_io_pins import setup_pins
 from hal_plumber.start_realtime import start_realtime
 
 logger = rclpy.logging.get_logger("ZA_hal_config")
@@ -56,8 +54,7 @@ except (RuntimeError, NameError) as e:
     raise e
 logger.info("HALPlumber config loaded")
 
-# robot IO pins
-# setup_pins(params)
+# robot IO pins are wired in HALPlumber after hal_io starts
 
 # start threads
 logger.info("Running start_realtime")

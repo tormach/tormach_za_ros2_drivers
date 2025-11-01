@@ -406,6 +406,17 @@ def generate_launch_description():
             ],
             condition=UnlessCondition(LaunchConfiguration("use_fake_hardware")),
         ),
+        # Safety stop node (mirrors ROS1 drive_safety behavior subset)
+        Node(
+            package=hw_pkg_name,
+            executable="safety_stop.py",
+            name="safety_stop",
+            output="screen",
+            parameters=[
+                dict(unsafe_vel_limit=0.10),
+            ],
+            condition=UnlessCondition(LaunchConfiguration("use_fake_hardware")),
+        ),
         # Fake hardware configuration & controller manager
         Node(
             package="controller_manager",

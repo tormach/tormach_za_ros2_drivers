@@ -168,6 +168,8 @@ def setup_safety_input_pins():
 
     # Quick stop
     hal.Signal('quick_stop').link(hal.Pin('hal_io.quick_stop'))
+    # External quick stop input (from ROS topic to drive_safety)
+    hal.Signal('quick_stop_ext').link(hal.Pin('hal_io.quick_stop_ext'))
 
     logger.info('Finished connecting hal pins for safety input')
 

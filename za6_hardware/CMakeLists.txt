@@ -47,8 +47,7 @@ endif()
 # Install python executables
 install(
   PROGRAMS scripts/hw_device_mgr scripts/drive_state scripts/dump_params
-  DESTINATION DESTINATION
-  lib/${PROJECT_NAME} # or bin?
+           scripts/safety_stop.py DESTINATION lib/${PROJECT_NAME}
   )
 
 # Install other files

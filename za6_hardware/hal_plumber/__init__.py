@@ -209,6 +209,15 @@ class HALPlumber(HALPlumberBase):
             hal.Signal(f"din{ix:02}").link(f"hal_io.din{ix:02}")
             hal.Signal(f"dout{ix:02}").link(f"hal_io.dout{ix:02}")  # Writer
 
+        # Safety-related IO wiring (runs after hal_io is up)
+        # - External quick stop from ROS topic → drive_safety
+        qse_sig = hal.newsig('quick_stop_ext', hal.HAL_BIT)
+        qse_sig.link('drive_safety.quick-stop-ext')
+        qse_sig.link('hal_io.quick_stop_ext')
+
+        # Note: do not link 'hal_io.state_cmd' here to avoid multiple writers on
+        # 'mgr_state_cmd'. Quick stop is handled via 'quick_stop_ext' and drive_safety.
+
     def setup_drive_state(self):
         hal.Signal('mgr_state_cmd').link('drive_state.state_cmd')  # Writer
         hal.Signal('mgr_state_set').link('drive_state.state_set')  # Writer
