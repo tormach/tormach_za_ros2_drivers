@@ -8,6 +8,8 @@ Panels:
     Name: Help
   - Class: rviz_common/Views
     Name: Views
+  - Class: rviz_za6_io_panel/IOPanel
+    Name: Digital IO
 Visualization Manager:
   Displays:
     - Class: rviz_default_plugins/Grid

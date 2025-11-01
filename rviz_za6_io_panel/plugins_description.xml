@@ -1,0 +1,9 @@
+<library path="rviz_za6_io_panel">
+  <class name="rviz_za6_io_panel/IOPanel"
+         type="rviz_za6_io_panel::IOPanel"
+         base_class_type="rviz_common::Panel">
+    <description>
+      Panel for visualizing and controlling ZA6 robot digital I/O (16 inputs, 16 outputs)
+    </description>
+  </class>
+</library>

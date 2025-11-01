@@ -26,6 +26,8 @@ Panels:
     Name: Time
     SyncMode: 0
     SyncSource: ""
+  - Class: rviz_za6_io_panel/IOPanel
+    Name: Digital IO
 Visualization Manager:
   Class: ""
   Displays:
